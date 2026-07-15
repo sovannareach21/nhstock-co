@@ -290,8 +290,8 @@ function renderReportPage() {
 
             <div class="inv-footer">
                 <div class="inv-qr-group">
-                    <div class="inv-qr-box"><img src="Image/qr-abakh.png" alt="QR"></div>
-                    <div class="inv-qr-box"><img src="Image/qr-abausd.png" alt="QR"></div>
+                    <div class="inv-qr-box"><img src="image/qr-abakh.png" alt="QR"></div>
+                    <div class="inv-qr-box"><img src="image/qr-abausd.png" alt="QR"></div>
                 </div>
                 <div class="inv-aba-name">ABA: HOUN NHAN</div>
                 <div class="inv-thanks">សូមអរគុណ! សម្រាប់ការគាំទ្រ !!</div>
