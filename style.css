@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kantumruy Pro', 'Khmer OS Battambang', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+/* --- Header Style ថ្មី - កែតម្រូវឱ្យបង្ហាញរូបភាពពេញ ១០០% មិនដាច់ --- */
+.main-header {
+    background-color: #fca120; /* ប្រើពណ៌លឿងសាច់ដូចរូបភាព */
+    width: 100%;
+    height: auto; /* បត់បែនតាមទំហំរូបភាពជាក់ស្តែង */
+    max-height: 180px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid #d35400;
+}
+
+.header-banner-img {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain; /* ធានាថារូបភាពបង្ហាញចេញពេញផ្ទៃ មិនកាត់ដាច់ */
+    display: block;
+}
+
+/* --- Sidebar Style (កូដដើម) --- */
+.main-container { display: flex; flex: 1; overflow: hidden; }
+.sidebar { width: 260px; background-color: #002566; border-right: 4px solid #fca120; }
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 18px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #003699;
+    cursor: pointer;
+}
+
+.menu-icon { width: 30px; height: 30px; margin-right: 15px; }
+.menu-item:hover, .menu-item.active { background-color: #003ca6; border-left: 6px solid #fca120; color: #00ff22; }
+
+/* --- Content Area (កូដដើម) --- */
+.content-area { flex: 1; background-color: #ffffff; display: flex; flex-direction: column; overflow-y: auto; }
+
+.table-title {
+    background-color: #f1c40f;
+    color: #000;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 3px solid #e67e22;
+}
+
+.control-panel-box {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 12px 20px;
+    margin: 15px 15px 0 15px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rate-input-group { display: flex; align-items: center; gap: 8px; font-weight: bold; color: #856404; }
+.rate-input-group input { width: 90px; padding: 6px; border: 1px solid #ced4da; text-align: center; font-weight: bold; }
+.currency-switch-group { display: flex; align-items: center; gap: 10px; }
+.btn-toggle-curr { padding: 8px 16px; font-weight: bold; border-radius: 4px; cursor: pointer; border: 2px solid #2980b9; background-color: #fff; color: #2980b9; }
+.btn-toggle-curr.active { background-color: #2980b9; color: #fff; }
+
+.input-form-container { background-color: #fff8f0; margin: 15px; padding: 20px; border-radius: 6px; border: 2px dashed #fca120; }
+.input-form-container h3 { color: #d35400; margin-bottom: 15px; font-size: 16px; border-bottom: 2px solid #fca120; padding-bottom: 5px; }
+.form-grid { display: flex; flex-wrap: wrap; gap: 15px; align-items: flex-end; }
+.form-group { display: flex; flex-direction: column; flex: 1; min-width: 150px; }
+.form-group label { font-size: 13px; font-weight: bold; margin-bottom: 5px; }
+.form-group input { padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px; }
+.btn-submit { background-color: #27ae60; color: white; border: none; padding: 11px 25px; font-weight: bold; cursor: pointer; border-radius: 4px; }
+.btn-danger { background-color: #c0392b; color: white; border: none; padding: 5px 12px; border-radius: 3px; cursor: pointer; }
+
+/* --- Table Styles --- */
+.table-responsive { padding: 0 15px 15px 15px; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.data-table th { background-color: #f7e396; color: #000; border: 1px solid #9c9c9c; padding: 12px 10px; font-weight: bold; text-align: center; }
+.data-table td { border: 1px solid #bdc3c7; padding: 10px; }
+.data-table tbody tr:nth-child(even) { background-color: #e6f2ff; }
+.code-col { color: #0055b3; font-weight: bold; text-align: center; }
+.price-col { text-align: right; font-weight: bold; }
+
+/* --- Report Header & Cards --- */
+.report-header-area { display: flex; justify-content: space-between; align-items: center; margin: 15px; }
+.btn-print { background-color: #2574a9; color: white; padding: 10px 25px; font-weight: bold; border-radius: 4px; cursor: pointer; border: none; font-size: 15px; }
+.pos-summary-cards { display: flex; gap: 15px; margin: 15px; }
+.card { flex: 1; padding: 20px; border-radius: 6px; color: white; text-align: center; }
+.card-in { background-color: #2980b9; } .card-out { background-color: #8e44ad; } .card-profit { background-color: #27ae60; }
+
+/* ==========================================================
+   --- ទម្រង់ក្រដាសវិក្កយបត្រលាក់ទុក (លេចឡើងតែពេលបោះពុម្ភ) ---
+   ========================================================== */
+#invoice-print-area {
+    display: none; 
+}
+
+/* ==========================================
+   --- ច្បាប់បោះពុម្ភ (Print Mode Configuration) ---
+   ========================================== */
+@media print {
+    .no-print, .sidebar, .input-form-container, .btn-print, .btn-danger, .control-panel-box, .main-header, .pos-summary-cards, .table-title, .table-responsive, .report-header-area { 
+        display: none !important; 
+    }
+    
+    body, .main-container, .content-area { 
+        background: #fff !important; 
+        display: block !important; 
+        height: auto !important; 
+        overflow: visible !important; 
+    }
+
+    #invoice-print-area {
+        display: block !important;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 10px;
+        background-color: #fff;
+    }
+
+    /* ផ្នែកក្បាលទំព័រពណ៌លឿងនៃវិក្កយបត្រ */
+    .inv-header-banner {
+        background-color: #fca120 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        border-bottom: 3px solid #d35400;
+    }
+
+    /* កែសម្រួលប្រអប់ Logo ក្នុងវិក្កយបត្រឱ្យចេញរង្វង់មូលពេញស្អាត */
+    .inv-logo-box {
+        width: 100px;
+        height: 100px;
+        background-color: #fff !important;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .inv-logo-box img { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: contain; /* រក្សារាងឡូហ្គោពេញលេញ */
+    }
+
+    .inv-title-box {
+        flex: 1;
+        text-align: center;
+    }
+    .inv-title-box h1 { font-size: 30px; font-weight: bold; color: #000 !important; margin-bottom: 5px; }
+    .inv-title-box h2 { font-size: 24px; color: #d35400 !important; font-weight: bold; }
+
+    .inv-info-row {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+        font-size: 14px;
+        line-height: 1.8;
+    }
+    .inv-cust-side { width: 55%; }
+    .inv-shop-side { width: 45%; text-align: right; }
+
+    .inv-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 25px;
+    }
+    .inv-table th {
+        border: 1px solid #000 !important;
+        padding: 8px;
+        font-weight: bold;
+        text-align: center;
+        background-color: #fff !important;
+    }
+    .inv-table td {
+        border: 1px solid #000 !important;
+        padding: 8px;
+    }
+    .inv-total-row td {
+        font-weight: bold;
+    }
+
+    .inv-footer {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .inv-qr-group {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 10px;
+    }
+    .inv-qr-box { width: 120px; text-align: center; }
+    .inv-qr-box img { width: 100%; height: auto; border: 1px solid #000; padding: 4px; }
+    
+    .inv-aba-name { font-size: 13px; font-weight: bold; margin-top: 5px; color: #000; }
+    .inv-thanks { font-style: italic; font-weight: bold; color: #000; margin-top: 15px; font-size: 15px; }
+}
