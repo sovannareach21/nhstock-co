@@ -234,7 +234,7 @@ function renderReportPage() {
         <div id="invoice-print-area">
             <div class="inv-header-banner">
                 <div class="inv-logo-box">
-                    <img src="images/Logo.JPG" alt="Logo">
+                    <img src="images/Logo.jpg" alt="Logo">
                 </div>
                 <div class="inv-title-box">
                     <h1>វិក្កយបត្រ</h1>
